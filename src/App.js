@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { gql, useQuery } from '@apollo/client';
+const GET_USERS = gql`
+  query GetUsers {
+    users {
+      id
+      name
+      email
+    }
+  }
+`;
 
 function App() {
+  const { data, loading, error } = useQuery(GET_USERS);
+
+  if (loading) return '<p>ローディング中です</p>';
+  if (error) return '<p>エラーが発生しています。<p>';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ margin: '3em' }}>
+      <h1>GraphQL</h1>
+      {data.users.map((user) => (
+        <div key={user.id}>id: {user.id}, Name: {user.name}</div>
+      ))}
     </div>
   );
 }
