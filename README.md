@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Tutorial: Connecting React with GraphQL using Apollo Client
+
+This repository contains the source code and examples for the tutorial series that continues from the [Reffect tutorial on GraphQL](https://reffect.co.jp/html/graphql/).\
+In this tutorial series, we explore the process of connecting a frontend application with GraphQL using React and [Apollo Client](https://www.apollographql.com/docs/react/).\
+You will learn how to set up and use Apollo Client in a React application to fetch and manage data from a GraphQL API.
+
+**Note:** To fully follow along with this tutorial, you will also need to have the following repositories up and running:
+
+[Backend GraphQL API](https://github.com/uimoow/learn-apollographql):\
+This is the backend GraphQL API that this React frontend will communicate with.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
